@@ -1,1 +1,4 @@
 blastdb/*
+data/uniprot-reviewed_yes.sorted
+data/uniprot-reviewed_yes.tab
+data/uniprot-reviewed_yes.tab.gz
