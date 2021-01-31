@@ -1,0 +1,11 @@
+PASS	Basic Statistics	19_7_S7_L001_R2_001.fastq.gz
+PASS	Per base sequence quality	19_7_S7_L001_R2_001.fastq.gz
+PASS	Per tile sequence quality	19_7_S7_L001_R2_001.fastq.gz
+PASS	Per sequence quality scores	19_7_S7_L001_R2_001.fastq.gz
+FAIL	Per base sequence content	19_7_S7_L001_R2_001.fastq.gz
+WARN	Per sequence GC content	19_7_S7_L001_R2_001.fastq.gz
+PASS	Per base N content	19_7_S7_L001_R2_001.fastq.gz
+WARN	Sequence Length Distribution	19_7_S7_L001_R2_001.fastq.gz
+PASS	Sequence Duplication Levels	19_7_S7_L001_R2_001.fastq.gz
+WARN	Overrepresented sequences	19_7_S7_L001_R2_001.fastq.gz
+PASS	Adapter Content	19_7_S7_L001_R2_001.fastq.gz
