@@ -16,16 +16,35 @@ cdslist <- read.csv("../analyses/GCF_000297895_cdslist.tab", header = FALSE)
 ```
 
 ```{r}
-uniprot <- read.csv("../analyses/Cg-uniprot_blastx.tab", header = FALSE, sep="\t")
+uniprot <- read.csv("../analyses/Cg-uniprot_blastx.tab", header = FALSE, sep="\t") %>%
+  distinct(V1, .keep_all = TRUE)
 ```
 
 
 
 
+```{r}
+spur <- read.csv("../analyses/Cg-ProteinsSpur5.0_blastx.tab", header = FALSE, sep="\t") %>%
+  distinct(V1, .keep_all = TRUE)
+```
+
+```{r}
+dmel <- read.csv("../analyses/Cg-dmel-gene_blastn.tab", header = FALSE, sep="\t")  %>%
+  distinct(V1, .keep_all = TRUE)
+```
+
+```{r}
+cel <- read.csv("../analyses/Cg-c_elRRJ_blastx.tab", header = FALSE, sep="\t")  %>%
+  distinct(V1, .keep_all = TRUE)
+```
 
 
 ```{r}
-comb <- left_join(cdslist, uniprot, by = "V1") 
-  %>% left_join()
+comb <- left_join(cdslist, uniprot, by = "V1") %>% 
+  left_join(spur, by = "V1") %>%
+  left_join(cel, by = "V1") %>%
+  left_join(dmel, by = "V1") %>%
+  select(V1, V2.x, V11.x, V2.y, V11.y, V2.x.x, V11.x.x, V2.y.y, V11.y.y) %>%
+  rename(cdsID = V1, V2.x = uniprot, V11.x = u_ev, V2.y = spur, V11.y = s_ev, V2.x.x = cel, V11.x.x = cel_ev, V2.y.y = dmel, V11.y.y =dmel_ev)
 ```
 
