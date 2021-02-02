@@ -45,6 +45,40 @@ comb <- left_join(cdslist, uniprot, by = "V1") %>%
   left_join(cel, by = "V1") %>%
   left_join(dmel, by = "V1") %>%
   select(V1, V2.x, V11.x, V2.y, V11.y, V2.x.x, V11.x.x, V2.y.y, V11.y.y) %>%
-  rename(cdsID = V1, V2.x = uniprot, V11.x = u_ev, V2.y = spur, V11.y = s_ev, V2.x.x = cel, V11.x.x = cel_ev, V2.y.y = dmel, V11.y.y =dmel_ev)
+  rename(cdsID = V1, uniprot = V2.x, u_ev = V11.x, spur = V2.y, s_ev = V11.y, cel = V2.x.x, cel_ev = V11.x.x, dmel = V2.y.y, dmel_ev = V11.y.y) %>%
+  left_join(giles, by = c("cdsID" = "ID"))
+```
+
+```{r}
+write_tsv(
+  comb,
+  "../analyses/Cg-annot-join.tab"
+)
+
+```
+
+
+# GOing back to Giles Blast
+
+../data/bestblast_/bestblast.tab
+
+```{r}
+giles <- read.csv("../data/bestblast_/bestblast.tab", header = TRUE, sep = "\t") %>%
+  select(ID, HitAcc, HitDesc, E.Value)
+```
+
+
+```{r}
+left_join(comb, giles, by = c("cdsID" = "ID"))
+```
+
+
+```{r}
+loc <- read.csv("../data/bestblast_/LOC_seqID_key.tab", header = FALSE, sep = "\t")
+```
+
+
+```{r}
+loc_dt <- left_join(loc, comb, by = c("V1" = "cdsID"))
 ```
 
