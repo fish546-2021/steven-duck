@@ -4,3 +4,4 @@ data/uniprot-reviewed_yes.tab
 data/uniprot-reviewed_yes.tab.gz
 data/GCF_000297895.1_oyster_v9_cds_from_genomic.fna
 analyses/GCF_000297895.1_oyster_v9_cds_from_genomic.tab
+.Rproj.user

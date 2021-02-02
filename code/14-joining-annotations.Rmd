@@ -1,0 +1,21 @@
+---
+title: "14-joining-annotations"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+```{bash}
+pwd
+```
+
+
+```{r}
+cdslist <- read.csv("../analyses/GCF_000297895_cdslist.tab", header = FALSE)
+```
+
+```{bash}
+
+```
+
