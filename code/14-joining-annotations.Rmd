@@ -15,7 +15,17 @@ pwd
 cdslist <- read.csv("../analyses/GCF_000297895_cdslist.tab", header = FALSE)
 ```
 
-```{bash}
+```{r}
+uniprot <- read.csv("../analyses/Cg-uniprot_blastx.tab", header = FALSE, sep="\t")
+```
 
+
+
+
+
+
+```{r}
+comb <- left_join(cdslist, uniprot, by = "V1") 
+  %>% left_join()
 ```
 
