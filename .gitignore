@@ -5,3 +5,6 @@ data/uniprot-reviewed_yes.tab.gz
 data/GCF_000297895.1_oyster_v9_cds_from_genomic.fna
 analyses/GCF_000297895.1_oyster_v9_cds_from_genomic.tab
 .Rproj.user
+data/329774_S1_L001_R1_001.fastq.gz
+data/329774
+data/35.trim.fastq
