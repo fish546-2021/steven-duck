@@ -8,3 +8,5 @@ analyses/GCF_000297895.1_oyster_v9_cds_from_genomic.tab
 data/329774_S1_L001_R1_001.fastq.gz
 data/329774
 data/35.trim.fastq
+*.2
+*.1
